@@ -1,0 +1,840 @@
+{
+  "all_time": {
+    "total_rolls": 1160,
+    "total_coins_earned": 3346282,
+    "total_coins_spent": 0,
+    "auras": {
+      "Ink": {
+        "rarity": 700,
+        "count": 70
+      },
+      "Divinus": {
+        "rarity": 32,
+        "count": 775
+      },
+      "Tuff": {
+        "rarity": 67,
+        "count": 607
+      },
+      "Ruby": {
+        "rarity": 350,
+        "count": 154
+      },
+      "Rare": {
+        "rarity": 16,
+        "count": 1012
+      },
+      "Gilded": {
+        "rarity": 512,
+        "count": 94
+      },
+      "Crystallized": {
+        "rarity": 64,
+        "count": 513
+      },
+      "Wind": {
+        "rarity": 900,
+        "count": 80
+      },
+      "Bleeding": {
+        "rarity": 4444,
+        "count": 19
+      },
+      "Rage": {
+        "rarity": 128,
+        "count": 393
+      },
+      "Emerald": {
+        "rarity": 500,
+        "count": 138
+      },
+      "Jackpot": {
+        "rarity": 777,
+        "count": 65
+      },
+      "Sapphire": {
+        "rarity": 800,
+        "count": 69
+      },
+      "Sidereum": {
+        "rarity": 4096,
+        "count": 12
+      },
+      "Forbidden": {
+        "rarity": 403,
+        "count": 150
+      },
+      "Topaz": {
+        "rarity": 150,
+        "count": 342
+      },
+      "Aquamarine": {
+        "rarity": 900,
+        "count": 65
+      },
+      "Honey": {
+        "rarity": 8335,
+        "count": 16
+      },
+      "Glock": {
+        "rarity": 1700,
+        "count": 37
+      },
+      "Hydrogen": {
+        "rarity": 1111,
+        "count": 69
+      },
+      "Undead": {
+        "rarity": 12000,
+        "count": 4
+      },
+      "Powered": {
+        "rarity": 16384,
+        "count": 13
+      },
+      "Diaboli": {
+        "rarity": 1004,
+        "count": 62
+      },
+      "Kawaii": {
+        "rarity": 12300,
+        "count": 8
+      },
+      "Precious": {
+        "rarity": 1024,
+        "count": 62
+      },
+      "Starlight": {
+        "rarity": 50000,
+        "count": 5
+      },
+      "Ash": {
+        "rarity": 2300,
+        "count": 31
+      },
+      "Player": {
+        "rarity": 3000,
+        "count": 28
+      },
+      "Hazard": {
+        "rarity": 7000,
+        "count": 12
+      },
+      "Atomic": {
+        "rarity": 1180,
+        "count": 61
+      },
+      "Glacier": {
+        "rarity": 2304,
+        "count": 20
+      },
+      "Fem": {
+        "rarity": 4300,
+        "count": 19
+      },
+      "Magnetic": {
+        "rarity": 2048,
+        "count": 33
+      },
+      "Atomic : Ribonucleic": {
+        "rarity": 9876,
+        "count": 12
+      },
+      "Flutter": {
+        "rarity": 5000,
+        "count": 13
+      },
+      "Lunar": {
+        "rarity": 50000,
+        "count": 2
+      },
+      "Ink : LEAK": {
+        "rarity": 14000,
+        "count": 7
+      },
+      "Nihility": {
+        "rarity": 9000000,
+        "count": 1
+      },
+      "Undead : Devil": {
+        "rarity": 120000,
+        "count": 2
+      },
+      "doodle": {
+        "rarity": 7500,
+        "count": 7
+      },
+      "Corrosive": {
+        "rarity": 12000,
+        "count": 4
+      },
+      "Flora": {
+        "rarity": 3700,
+        "count": 13
+      },
+      "Cola": {
+        "rarity": 3999,
+        "count": 13
+      },
+      "Rage : Heated": {
+        "rarity": 12800,
+        "count": 6
+      },
+      "Lost Soul": {
+        "rarity": 9200,
+        "count": 3
+      },
+      "Copper": {
+        "rarity": 29000,
+        "count": 4
+      },
+      "Stormal": {
+        "rarity": 90000,
+        "count": 3
+      },
+      "Quartz": {
+        "rarity": 8192,
+        "count": 9
+      },
+      "Good": {
+        "rarity": 5,
+        "count": 787
+      },
+      "Natural": {
+        "rarity": 8,
+        "count": 848
+      },
+      "Flushed": {
+        "rarity": 6900,
+        "count": 13
+      },
+      "Common": {
+        "rarity": 2,
+        "count": 241
+      },
+      "Uncommon": {
+        "rarity": 4,
+        "count": 433
+      },
+      "Aquatic": {
+        "rarity": 40000,
+        "count": 2
+      },
+      "Flushed : Lobotomy": {
+        "rarity": 69000,
+        "count": 2
+      },
+      "Comet": {
+        "rarity": 120000,
+        "count": 1
+      },
+      "Star Rider": {
+        "rarity": 50000,
+        "count": 1
+      },
+      "Nautilus": {
+        "rarity": 70000,
+        "count": 1
+      },
+      "WATT": {
+        "rarity": 32768,
+        "count": 1
+      },
+      "Solar": {
+        "rarity": 50000,
+        "count": 3
+      },
+      "HOPE": {
+        "rarity": 488725,
+        "count": 1
+      },
+      "Chromatic": {
+        "rarity": 20000000,
+        "count": 1
+      },
+      "Permafrost": {
+        "rarity": 73500,
+        "count": 1
+      },
+      "BOUNDED": {
+        "rarity": 200000,
+        "count": 1
+      }
+    }
+  },
+  "sessions": [
+    {
+      "start": "2026-04-27 21:13:17",
+      "end": "2026-04-27 21:42:48",
+      "rolls": 508,
+      "coins_earned": 941356,
+      "coins_spent": 0,
+      "start_balance": 3860104,
+      "end_balance": null,
+      "auras": {
+        "Undead : Devil": {
+          "rarity": 120000,
+          "count": 1
+        },
+        "Stormal": {
+          "rarity": 90000,
+          "count": 1
+        },
+        "Aquatic": {
+          "rarity": 40000,
+          "count": 1
+        },
+        "Powered": {
+          "rarity": 16384,
+          "count": 2
+        },
+        "Rage : Heated": {
+          "rarity": 12800,
+          "count": 3
+        },
+        "Kawaii": {
+          "rarity": 12300,
+          "count": 1
+        },
+        "Atomic : Ribonucleic": {
+          "rarity": 9876,
+          "count": 3
+        },
+        "Lost Soul": {
+          "rarity": 9200,
+          "count": 1
+        },
+        "Honey": {
+          "rarity": 8335,
+          "count": 1
+        },
+        "Quartz": {
+          "rarity": 8192,
+          "count": 6
+        },
+        "doodle": {
+          "rarity": 7500,
+          "count": 2
+        },
+        "Hazard": {
+          "rarity": 7000,
+          "count": 1
+        },
+        "Flushed": {
+          "rarity": 6900,
+          "count": 3
+        },
+        "Flutter": {
+          "rarity": 5000,
+          "count": 4
+        },
+        "Bleeding": {
+          "rarity": 4444,
+          "count": 9
+        },
+        "Fem": {
+          "rarity": 4300,
+          "count": 6
+        },
+        "Sidereum": {
+          "rarity": 4096,
+          "count": 4
+        },
+        "Cola": {
+          "rarity": 3999,
+          "count": 5
+        },
+        "Flora": {
+          "rarity": 3700,
+          "count": 3
+        },
+        "Player": {
+          "rarity": 3000,
+          "count": 5
+        },
+        "Glacier": {
+          "rarity": 2304,
+          "count": 4
+        },
+        "Ash": {
+          "rarity": 2300,
+          "count": 7
+        },
+        "Magnetic": {
+          "rarity": 2048,
+          "count": 5
+        },
+        "Glock": {
+          "rarity": 1700,
+          "count": 7
+        },
+        "Atomic": {
+          "rarity": 1180,
+          "count": 12
+        },
+        "Hydrogen": {
+          "rarity": 1111,
+          "count": 14
+        },
+        "Precious": {
+          "rarity": 1024,
+          "count": 13
+        },
+        "Diaboli": {
+          "rarity": 1004,
+          "count": 18
+        },
+        "Wind": {
+          "rarity": 900,
+          "count": 18
+        },
+        "Aquamarine": {
+          "rarity": 900,
+          "count": 17
+        },
+        "Sapphire": {
+          "rarity": 800,
+          "count": 16
+        },
+        "Jackpot": {
+          "rarity": 777,
+          "count": 24
+        },
+        "Ink": {
+          "rarity": 700,
+          "count": 26
+        },
+        "Gilded": {
+          "rarity": 512,
+          "count": 29
+        },
+        "Emerald": {
+          "rarity": 500,
+          "count": 34
+        },
+        "Forbidden": {
+          "rarity": 403,
+          "count": 41
+        },
+        "Ruby": {
+          "rarity": 350,
+          "count": 49
+        },
+        "Topaz": {
+          "rarity": 150,
+          "count": 99
+        },
+        "Rage": {
+          "rarity": 128,
+          "count": 89
+        },
+        "Tuff": {
+          "rarity": 67,
+          "count": 179
+        },
+        "Crystallized": {
+          "rarity": 64,
+          "count": 153
+        },
+        "Divinus": {
+          "rarity": 32,
+          "count": 292
+        },
+        "Rare": {
+          "rarity": 16,
+          "count": 464
+        },
+        "Natural": {
+          "rarity": 8,
+          "count": 671
+        },
+        "Good": {
+          "rarity": 5,
+          "count": 626
+        },
+        "Uncommon": {
+          "rarity": 4,
+          "count": 335
+        },
+        "Common": {
+          "rarity": 2,
+          "count": 197
+        }
+      }
+    },
+    {
+      "start": "2026-04-27 21:44:05",
+      "end": "2026-04-27 21:53:23",
+      "rolls": 156,
+      "coins_earned": 718424,
+      "coins_spent": 0,
+      "start_balance": 4103038,
+      "end_balance": null,
+      "auras": {
+        "Comet": {
+          "rarity": 120000,
+          "count": 1
+        },
+        "Nautilus": {
+          "rarity": 70000,
+          "count": 1
+        },
+        "Flushed : Lobotomy": {
+          "rarity": 69000,
+          "count": 1
+        },
+        "Starlight": {
+          "rarity": 50000,
+          "count": 1
+        },
+        "Star Rider": {
+          "rarity": 50000,
+          "count": 1
+        },
+        "Lunar": {
+          "rarity": 50000,
+          "count": 1
+        },
+        "Solar": {
+          "rarity": 50000,
+          "count": 1
+        },
+        "WATT": {
+          "rarity": 32768,
+          "count": 1
+        },
+        "Powered": {
+          "rarity": 16384,
+          "count": 3
+        },
+        "Ink : LEAK": {
+          "rarity": 14000,
+          "count": 3
+        },
+        "Rage : Heated": {
+          "rarity": 12800,
+          "count": 1
+        },
+        "Kawaii": {
+          "rarity": 12300,
+          "count": 1
+        },
+        "Undead": {
+          "rarity": 12000,
+          "count": 1
+        },
+        "Atomic : Ribonucleic": {
+          "rarity": 9876,
+          "count": 3
+        },
+        "Lost Soul": {
+          "rarity": 9200,
+          "count": 1
+        },
+        "Honey": {
+          "rarity": 8335,
+          "count": 3
+        },
+        "Quartz": {
+          "rarity": 8192,
+          "count": 1
+        },
+        "doodle": {
+          "rarity": 7500,
+          "count": 2
+        },
+        "Hazard": {
+          "rarity": 7000,
+          "count": 4
+        },
+        "Flushed": {
+          "rarity": 6900,
+          "count": 4
+        },
+        "Flutter": {
+          "rarity": 5000,
+          "count": 1
+        },
+        "Bleeding": {
+          "rarity": 4444,
+          "count": 1
+        },
+        "Fem": {
+          "rarity": 4300,
+          "count": 4
+        },
+        "Sidereum": {
+          "rarity": 4096,
+          "count": 3
+        },
+        "Cola": {
+          "rarity": 3999,
+          "count": 6
+        },
+        "Flora": {
+          "rarity": 3700,
+          "count": 4
+        },
+        "Player": {
+          "rarity": 3000,
+          "count": 10
+        },
+        "Glacier": {
+          "rarity": 2304,
+          "count": 3
+        },
+        "Ash": {
+          "rarity": 2300,
+          "count": 10
+        },
+        "Magnetic": {
+          "rarity": 2048,
+          "count": 13
+        },
+        "Glock": {
+          "rarity": 1700,
+          "count": 10
+        },
+        "Atomic": {
+          "rarity": 1180,
+          "count": 22
+        },
+        "Hydrogen": {
+          "rarity": 1111,
+          "count": 16
+        },
+        "Precious": {
+          "rarity": 1024,
+          "count": 14
+        },
+        "Diaboli": {
+          "rarity": 1004,
+          "count": 15
+        },
+        "Wind": {
+          "rarity": 900,
+          "count": 25
+        },
+        "Aquamarine": {
+          "rarity": 900,
+          "count": 14
+        },
+        "Sapphire": {
+          "rarity": 800,
+          "count": 13
+        },
+        "Jackpot": {
+          "rarity": 777,
+          "count": 16
+        },
+        "Ink": {
+          "rarity": 700,
+          "count": 16
+        },
+        "Gilded": {
+          "rarity": 512,
+          "count": 28
+        },
+        "Emerald": {
+          "rarity": 500,
+          "count": 25
+        },
+        "Forbidden": {
+          "rarity": 403,
+          "count": 35
+        },
+        "Ruby": {
+          "rarity": 350,
+          "count": 38
+        },
+        "Topaz": {
+          "rarity": 150,
+          "count": 79
+        },
+        "Rage": {
+          "rarity": 128,
+          "count": 97
+        },
+        "Tuff": {
+          "rarity": 67,
+          "count": 131
+        },
+        "Crystallized": {
+          "rarity": 64,
+          "count": 106
+        },
+        "Divinus": {
+          "rarity": 32,
+          "count": 153
+        },
+        "Rare": {
+          "rarity": 16,
+          "count": 133
+        }
+      }
+    },
+    {
+      "start": "2026-04-27 21:56:55",
+      "end": "2026-04-27 22:06:58",
+      "rolls": 153,
+      "coins_earned": 226538,
+      "coins_spent": 0,
+      "start_balance": 5057274,
+      "end_balance": 5283812,
+      "auras": {
+        "Stormal": {
+          "rarity": 90000,
+          "count": 1
+        },
+        "Starlight": {
+          "rarity": 50000,
+          "count": 1
+        },
+        "Copper": {
+          "rarity": 29000,
+          "count": 2
+        },
+        "Powered": {
+          "rarity": 16384,
+          "count": 1
+        },
+        "Ink : LEAK": {
+          "rarity": 14000,
+          "count": 1
+        },
+        "Atomic : Ribonucleic": {
+          "rarity": 9876,
+          "count": 2
+        },
+        "Hazard": {
+          "rarity": 7000,
+          "count": 3
+        },
+        "Flushed": {
+          "rarity": 6900,
+          "count": 1
+        },
+        "Flutter": {
+          "rarity": 5000,
+          "count": 1
+        },
+        "Bleeding": {
+          "rarity": 4444,
+          "count": 1
+        },
+        "Fem": {
+          "rarity": 4300,
+          "count": 1
+        },
+        "Glacier": {
+          "rarity": 2304,
+          "count": 2
+        },
+        "Ash": {
+          "rarity": 2300,
+          "count": 3
+        },
+        "Magnetic": {
+          "rarity": 2048,
+          "count": 1
+        },
+        "Glock": {
+          "rarity": 1700,
+          "count": 2
+        },
+        "Atomic": {
+          "rarity": 1180,
+          "count": 2
+        },
+        "Hydrogen": {
+          "rarity": 1111,
+          "count": 4
+        },
+        "Precious": {
+          "rarity": 1024,
+          "count": 4
+        },
+        "Diaboli": {
+          "rarity": 1004,
+          "count": 5
+        },
+        "Aquamarine": {
+          "rarity": 900,
+          "count": 7
+        },
+        "Wind": {
+          "rarity": 900,
+          "count": 4
+        },
+        "Sapphire": {
+          "rarity": 800,
+          "count": 6
+        },
+        "Jackpot": {
+          "rarity": 777,
+          "count": 4
+        },
+        "Ink": {
+          "rarity": 700,
+          "count": 5
+        },
+        "Gilded": {
+          "rarity": 512,
+          "count": 13
+        },
+        "Emerald": {
+          "rarity": 500,
+          "count": 13
+        },
+        "Forbidden": {
+          "rarity": 403,
+          "count": 13
+        },
+        "Ruby": {
+          "rarity": 350,
+          "count": 9
+        },
+        "Topaz": {
+          "rarity": 150,
+          "count": 28
+        },
+        "Rage": {
+          "rarity": 128,
+          "count": 35
+        },
+        "Tuff": {
+          "rarity": 67,
+          "count": 45
+        },
+        "Crystallized": {
+          "rarity": 64,
+          "count": 61
+        },
+        "Divinus": {
+          "rarity": 32,
+          "count": 84
+        },
+        "Rare": {
+          "rarity": 16,
+          "count": 154
+        },
+        "Natural": {
+          "rarity": 8,
+          "count": 176
+        },
+        "Good": {
+          "rarity": 5,
+          "count": 160
+        },
+        "Uncommon": {
+          "rarity": 4,
+          "count": 98
+        },
+        "Common": {
+          "rarity": 2,
+          "count": 44
+        }
+      }
+    }
+  ]
+}

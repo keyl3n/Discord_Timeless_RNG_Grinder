@@ -1,0 +1,42 @@
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Logs & outputs
+*.log
+nohup.out
+bot.log
+*.log.*
+
+# Session data (keep rolls.json & session_summary.txt for stats tracking)
+debug_captures.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Oracle Cloud
+oracle-instance
+*.pem
+*.pub
