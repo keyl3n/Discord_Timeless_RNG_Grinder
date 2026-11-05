@@ -11,6 +11,9 @@ from stats import StatsManager
 from utils import format_timestamp
 
 # Setup logging
+# Emojis in log lines need UTF-8 (Windows consoles default to cp1252)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 logging.basicConfig(
     level=logging.INFO,
     format="%(message)s",
@@ -29,7 +32,7 @@ class TimelessBot(discord.Client):
         self._shutting_down = False
 
     async def on_ready(self):
-        logger.info(f"{format_timestamp()} Logged in as {self.user} (ID: {self.user.id})")
+        logger.info(f"{format_timestamp()} 🐱✨ nyaa~ logged in as {self.user} (ID: {self.user.id}) uwu")
 
         # Resolve target channel
         channel = self.get_channel(CHANNEL_ID)
@@ -37,16 +40,16 @@ class TimelessBot(discord.Client):
             try:
                 channel = await self.fetch_channel(CHANNEL_ID)
             except Exception as e:
-                logger.error(f"Could not fetch channel {CHANNEL_ID}: {e}")
+                logger.error(f"😿 oh nyo!! couldn't fetch channel {CHANNEL_ID}: {e}")
                 await self.close()
                 return
 
         if channel is None:
-            logger.error(f"Channel {CHANNEL_ID} not found. Check CHANNEL_ID in .env")
+            logger.error(f"🙀 meow?? channel {CHANNEL_ID} not found~ pwease check CHANNEL_ID in .env >w<")
             await self.close()
             return
 
-        logger.info(f"{format_timestamp()} Target channel: {getattr(channel, 'name', channel.id)} (ID: {channel.id})")
+        logger.info(f"{format_timestamp()} 🐾 *paws at* target channel: {getattr(channel, 'name', channel.id)} (ID: {channel.id}) :3")
 
         # Brief pause to avoid hammering the API right after connect
         await asyncio.sleep(3.0)
@@ -72,7 +75,7 @@ class TimelessBot(discord.Client):
             return
         self._shutting_down = True
 
-        logger.info(f"\n{format_timestamp()} Shutting down gracefully...")
+        logger.info(f"\n{format_timestamp()} 😽💤 shutting down gwacefuwwy... nighty night nya~")
 
         if self.roller:
             self.roller.stop()
@@ -91,20 +94,20 @@ class TimelessBot(discord.Client):
                     self.potion_mgr.get_final_balance(), timeout=8.0
                 )
             except BaseException as e:
-                logger.warning(f"Could not fetch final balance: {type(e).__name__}: {e}")
+                logger.warning(f"😿 couldn't fetch final bawance, sowwy: {type(e).__name__}: {e}")
 
         # Fallback: use the roller's running balance tracker
         if final_balance is None and self.roller:
             fb = self.roller.total_balance
             if fb > 0:
                 final_balance = fb
-                logger.info("Using in-memory balance estimate from rolling loop.")
+                logger.info("🐈 using my in-memowy bawance estimate fwom the wowwing loop~ nya")
 
         try:
             summary = self.stats.generate_summary(final_balance)
             logger.info(f"\n{summary}")
         except Exception as e:
-            logger.error(f"Failed to generate summary: {e}", exc_info=True)
+            logger.error(f"🙀 oopsie!! faiwed to genyewate summawy: {e}", exc_info=True)
 
         try:
             await self.close()
@@ -121,14 +124,14 @@ async def main():
     except asyncio.CancelledError:
         pass
     except Exception as e:
-        logger.error(f"Bot error: {type(e).__name__}: {e}", exc_info=True)
+        logger.error(f"😾 hisss!! bot ewwow: {type(e).__name__}: {e}", exc_info=True)
     finally:
         if not bot._shutting_down:
-            logger.info(f"\n{format_timestamp()} Caught Ctrl+C...")
+            logger.info(f"\n{format_timestamp()} 🐱💢 caught Ctrl+C... *tail flick* nya!")
             try:
                 await bot.graceful_shutdown()
             except BaseException as e:
-                logger.error(f"Shutdown error: {type(e).__name__}: {e}", exc_info=True)
+                logger.error(f"😿 shutdown ewwow, mew: {type(e).__name__}: {e}", exc_info=True)
 
 
 if __name__ == "__main__":

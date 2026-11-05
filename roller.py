@@ -33,7 +33,7 @@ class Roller:
         self.total_balance = self.potion_mgr.balance
         self._roll_count = 0
         self._last_roll_num: int | None = None
-        logger.info(f"{format_timestamp()} Starting rolling loop...")
+        logger.info(f"{format_timestamp()} 🎲🐾 starting wowwing loop... wet's go nya~!")
 
         while self._running:
             try:
@@ -56,7 +56,7 @@ class Roller:
             except asyncio.CancelledError:
                 break
             except Exception as e:
-                logger.error(f"Error during roll: {e}", exc_info=True)
+                logger.error(f"😿 oh nyo, ewwow during woww: {e}", exc_info=True)
                 await asyncio.sleep(2.0)
 
     async def _periodic_buff_check(self):
@@ -68,7 +68,7 @@ class Roller:
             await self.potion_mgr.check_buffs()
         needs = self.potion_mgr._calculate_needs()
         if needs:
-            logger.info(f"{format_timestamp()} 🔄 Periodic buff check: replenishing {needs}")
+            logger.info(f"{format_timestamp()} 🔄🧪 pewiodic buff check~ *sniff sniff* wepwenishing {needs} nya")
             await self.potion_mgr.check_inventory()
             await self.potion_mgr._consume_inventory_potions(needs)
             if needs:
@@ -85,18 +85,18 @@ class Roller:
         if msg is None:
             if not self._running:
                 return False
-            logger.debug("No response from /roll — retrying once")
+            logger.debug("🙀 no wesponse fwom /woww — twying once mowe~ mew")
             await asyncio.sleep(1.0)
             msg = await send_slash_command(self.client, self.channel, BOT_ID, "roll")
             if msg is None:
-                logger.warning("No response from /roll after retry")
+                logger.warning("😿 stiww no wesponse fwom /woww aftew wetwy... sadge nya")
                 return False
 
         text = get_embed_text(msg)
 
         # Handle cooldown — wait just enough then try again
         if "cooldown" in text.lower():
-            logger.debug("Cooldown hit, waiting and retrying...")
+            logger.debug("⏳😾 cooldown hit, hisss~ waiting and wetwying... *tail swish*")
             await asyncio.sleep(COOLDOWN_RETRY_DELAY)
             msg = await send_slash_command(self.client, self.channel, BOT_ID, "roll")
             if msg is None:
@@ -119,8 +119,8 @@ class Roller:
         roll_str = f"#{roll_num:,}" if roll_num else "?"
         luck_str = str(luck) if luck is not None else "?"
         logger.info(
-            f"{format_timestamp()} Roll {roll_str} | Auras: {compact_aura_str(auras)} "
-            f"| Coins: +${coins:,} (Total: ${self.total_balance:,}) | Luck: {luck_str}"
+            f"{format_timestamp()} 🎲 Woww {roll_str} | ✨ Auwas: {compact_aura_str(auras)} "
+            f"| 💰 Coins: +${coins:,} (Totaw: ${self.total_balance:,}) | 🍀 Luck: {luck_str} nya~ 🐱"
         )
 
         await self.potion_mgr.check_and_replenish(luck)

@@ -29,11 +29,11 @@ async def get_application_commands(channel) -> list:
         except discord.HTTPException as e:
             if e.status == 429:
                 wait = 10 * (attempt + 1)
-                logger.warning(f"Rate limited fetching commands, waiting {wait}s (attempt {attempt+1}/5)")
+                logger.warning(f"🙀⏳ wate wimited fetching commands, waiting {wait}s (attempt {attempt+1}/5) hisss")
                 await asyncio.sleep(wait)
             else:
                 raise
-    logger.error("Failed to fetch application commands after 5 retries")
+    logger.error("😿 faiwed to fetch appwication commands aftew 5 wetwies... nyooo")
     return []
 
 
@@ -97,7 +97,7 @@ async def wait_for_shop_response(
         except (asyncio.TimeoutError, asyncio.CancelledError):
             pass
 
-    logger.warning("Timed out waiting for shop response")
+    logger.warning("⏰😿 timed out waiting fow shop wesponse... mew")
     return None
 
 
@@ -114,9 +114,9 @@ class ShopInteraction:
         msg = await send_slash_command(self.client, self.channel, BOT_ID, "shop")
         if msg:
             self.current_shop_message = msg
-            logger.info("Shop opened successfully")
+            logger.info("🛒😸 shop opened successfuwwy nya~")
         else:
-            logger.error("Failed to open shop - no response")
+            logger.error("🙀 faiwed to open shop - no wesponse, nyooo")
         return msg
 
     async def get_balance_from_shop(self) -> int | None:
@@ -159,7 +159,7 @@ class ShopInteraction:
         """Log full dropdown option details for debugging."""
         select = self._find_select()
         if select is None:
-            logger.info(f"[Page debug{' '+label if label else ''}] No dropdown found")
+            logger.info(f"🔍🐾 [Page debug{' '+label if label else ''}] nyo dwopdown found mew")
             return
         options_info = [(o.label, o.value) for o in select.options]
         buttons = []
@@ -168,13 +168,13 @@ class ShopInteraction:
                 for child in row.children:
                     if isinstance(child, discord.Button) and child.label:
                         buttons.append(child.label)
-        logger.info(f"[Page debug{' '+label if label else ''}] Options: {options_info} | Buttons: {buttons}")
+        logger.info(f"🔍🐾 [Page debug{' '+label if label else ''}] Options: {options_info} | Buttons: {buttons} nya~")
 
     async def select_dropdown_item(self, item_name: str) -> bool:
         """Select item_name from shop dropdown. Returns True on success."""
         select = self._find_select()
         if select is None:
-            logger.error(f"No dropdown found in shop message for '{item_name}'")
+            logger.error(f"🙀 nyo dwopdown found in shop message fow '{item_name}'... mew")
             return False
 
         # Find the matching option object
@@ -187,24 +187,24 @@ class ShopInteraction:
         if target_option is None:
             available = [o.value for o in select.options]
             logger.warning(
-                f"'{item_name}' not on current shop page. Available: {available}"
+                f"🙀 '{item_name}' not on cuwwent shop page. Avaiwabwe: {available} mew?"
             )
             return False
 
         try:
             # discord.py-self SelectMenu.choose() takes SelectOption objects
             await select.choose(target_option)
-            logger.debug(f"Selected '{target_option.label}' from dropdown")
+            logger.debug(f"👆 sewected '{target_option.label}' fwom dwopdown nya")
             # Wait longer for the shop bot to process the selection and edit the message
             await asyncio.sleep(2.5)
             try:
                 if self.current_shop_message is not None:
                     self.current_shop_message = await self.current_shop_message.fetch()
             except Exception as e:
-                logger.debug(f"Could not re-fetch shop message: {e}")
+                logger.debug(f"😿 couldn't we-fetch shop message: {e}")
             return True
         except Exception as e:
-            logger.error(f"Failed to select '{item_name}' from dropdown: {e}")
+            logger.error(f"🙀 faiwed to sewect '{item_name}' fwom dwopdown: {e} nyooo")
             return False
 
     async def click_button(self, label: str) -> discord.Message | None:
@@ -217,7 +217,7 @@ class ShopInteraction:
                     for child in row.children:
                         if isinstance(child, discord.Button) and child.label:
                             available.append(child.label)
-            logger.warning(f"Button '{label}' not found. Available: {available}")
+            logger.warning(f"🙀 button '{label}' nyot found. Avaiwabwe: {available} mew?")
             return None
 
         msg_id = self.current_shop_message.id if self.current_shop_message else None
@@ -235,7 +235,7 @@ class ShopInteraction:
                 )
 
             await button.click()
-            logger.debug(f"Clicked button: '{label}'")
+            logger.debug(f"🐾 cwicked button: '{label}' nya~")
 
             if edit_task:
                 try:
@@ -243,7 +243,7 @@ class ShopInteraction:
                     self.current_shop_message = after
                     return after
                 except (asyncio.TimeoutError, asyncio.CancelledError):
-                    logger.debug(f"No edit event for '{label}', polling fetch()")
+                    logger.debug(f"😿 nyo edit event fow '{label}', powwing fetch()... *taps paw*")
                     edit_task.cancel()
 
             # Fallback: poll fetch() until content changes (handles slow updates)
@@ -263,7 +263,7 @@ class ShopInteraction:
 
             return self.current_shop_message
         except Exception as e:
-            logger.error(f"Failed to click button '{label}': {e}")
+            logger.error(f"🙀 faiwed to cwick button '{label}': {e} nyooo")
             return None
 
     async def navigate_to_page(self, page: int) -> bool:
@@ -274,12 +274,12 @@ class ShopInteraction:
         for click_num in range(page - 1):
             response = await self.click_button("Next page")
             if response is None:
-                logger.error(f"Failed to click 'Next page' while navigating to page {page}")
+                logger.error(f"🙀 faiwed to cwick 'Next page' whiwe nyavigating to page {page}... mew")
                 return False
             self._log_page_contents(f"after click {click_num + 1}")
             await asyncio.sleep(0.5)
         
-        logger.debug(f"Navigated to page {page}")
+        logger.debug(f"📖😸 nyavigated to page {page} nya~")
         return True
 
     async def buy_item(self, item_name: str, quantity: int = 1) -> tuple[bool, int]:
@@ -291,15 +291,15 @@ class ShopInteraction:
         """
         potion_info = POTIONS.get(item_name)
         if not potion_info:
-            logger.error(f"Unknown potion: {item_name}")
+            logger.error(f"🙀 unknyown potion: {item_name}... mew?")
             return False, 0
 
         # Check if item is even available on current page
         available_items = self._get_current_page_items()
         if item_name not in available_items:
             logger.warning(
-                f"Item '{item_name}' not available on current page. "
-                f"Available: {available_items}. Skipping."
+                f"🙀 item '{item_name}' nyot avaiwabwe on cuwwent page. "
+                f"Avaiwabwe: {available_items}. Skipping~ mew"
             )
             return False, 0
 
@@ -324,7 +324,7 @@ class ShopInteraction:
 
             response = await self.click_button(chosen_label)
             if response is None:
-                logger.error(f"No response after clicking '{chosen_label}' for {item_name}")
+                logger.error(f"🙀 nyo wesponse aftew cwicking '{chosen_label}' fow {item_name}... nyooo")
                 return total_spent > 0, total_spent
 
             text = get_embed_text(response)
@@ -339,12 +339,12 @@ class ShopInteraction:
             is_shop_listing = "item shop" in tl and "page " in tl and not is_success
 
             if is_failure:
-                logger.error(f"Purchase failed for {item_name} — full response:\n{text}")
+                logger.error(f"😾 puwchase faiwed fow {item_name} — fuww wesponse:\n{text}")
                 return total_spent > 0, total_spent
             if is_shop_listing and not is_success:
                 logger.warning(
-                    f"Buy response looks like a shop listing (possible stale edit / rate-limit) "
-                    f"for {item_name}. Full text:\n{text}"
+                    f"🙀 buy wesponse wooks wike a shop wisting (possibwe stawe edit / wate-wimit) "
+                    f"fow {item_name}. Fuww text:\n{text}"
                 )
                 # Don't count as bought; treat as failure for this attempt
                 return total_spent > 0, total_spent
@@ -353,25 +353,25 @@ class ShopInteraction:
             total_spent += cost
             remaining -= chosen_qty
             logger.info(
-                f"  Bought {chosen_qty}x {item_name} (${cost:,}) "
-                f"| Progress: {quantity - remaining}/{quantity}"
+                f"  🛍️😻 bought {chosen_qty}x {item_name} (${cost:,}) "
+                f"| Pwogwess: {quantity - remaining}/{quantity} nya~"
             )
 
             new_bal = parse_balance(text) or parse_balance_after(text)
             if new_bal is not None:
-                logger.info(f"  Balance after purchase: ${new_bal:,}")
+                logger.info(f"  💰🐟 bawance aftew puwchase: ${new_bal:,} nya~")
 
             if remaining > 0:
                 await asyncio.sleep(1.5)
                 # After a purchase the shop shows the shop page again — re-select the item
                 if not await self.select_dropdown_item(item_name):
                     # May need to re-open shop if message expired
-                    logger.info("Re-opening shop to continue purchase...")
+                    logger.info("🛒🐾 we-opening shop to continyue puwchase...")
                     if not await self.open_shop():
-                        logger.warning(f"Could not re-open shop, stopping at {quantity - remaining}/{quantity}")
+                        logger.warning(f"😿 couldn't we-open shop, stopping at {quantity - remaining}/{quantity}... mew")
                         break
                     if not await self.select_dropdown_item(item_name):
-                        logger.warning(f"Could not re-select {item_name} after re-open")
+                        logger.warning(f"😿 couldn't we-sewect {item_name} aftew we-open... mew")
                         break
 
         return True, total_spent
@@ -396,7 +396,7 @@ async def send_slash_command(
         if result is not None:
             return result
         if last_error is not None:
-            logger.warning(f"/{command_name} attempt {attempt + 1}/{_retries} failed: {last_error}")
+            logger.warning(f"🙀 /{command_name} attempt {attempt + 1}/{_retries} faiwed: {last_error} mew")
     return None
 
 
@@ -418,8 +418,8 @@ async def _send_slash_command_once(
 
         if target_cmd is None:
             logger.error(
-                f"Slash command '/{command_name}' not found for bot {bot_id}. "
-                f"Available: {[c.name for c in cmds if c.application_id == bot_id]}"
+                f"🙀 swash command '/{command_name}' nyot found fow bot {bot_id}. "
+                f"Avaiwabwe: {[c.name for c in cmds if c.application_id == bot_id]} mew?"
             )
             return None
 
@@ -488,7 +488,7 @@ async def _send_slash_command_once(
                 except (asyncio.TimeoutError, asyncio.CancelledError):
                     pass
 
-            logger.warning(f"Timed out waiting for bot response in channel {channel.id}")
+            logger.warning(f"⏰😿 timed out waiting fow bot wesponse in channew {channel.id}... mew")
             return None
         except Exception as e:
             await _cleanup_tasks()
@@ -500,8 +500,8 @@ async def _send_slash_command_once(
         task = asyncio.current_task()
         if task is not None and task.cancelling() > 0:
             raise asyncio.CancelledError() from e
-        logger.warning(f"/{command_name} no Discord ack (will retry): {e}")
+        logger.warning(f"😿 /{command_name} nyo Discowd ack (wiww wetwy): {e}")
         return None
     except Exception as e:
-        logger.error(f"Failed to send /{command_name}: {e}", exc_info=True)
+        logger.error(f"🙀 faiwed to send /{command_name}: {e} nyooo", exc_info=True)
         return None

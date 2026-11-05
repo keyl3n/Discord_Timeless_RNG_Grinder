@@ -70,7 +70,7 @@ async def wait_for_bot_response(
         except (asyncio.TimeoutError, asyncio.CancelledError):
             pass
 
-    logger.warning(f"Timed out waiting for bot response in channel {channel.id}")
+    logger.warning(f"⏰😿 timed out waiting fow bot wesponse in channew {channel.id}... mew")
     return None
 
 

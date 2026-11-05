@@ -42,19 +42,19 @@ class PotionManager:
         """Send /buffs and parse active buffs."""
         msg = await self.send_command("buffs")
         if msg is None:
-            logger.warning("Could not fetch buffs")
+            logger.warning("😿 couldn't fetch buffs, mew...")
             return {}
 
         text = get_embed_text(msg)
         self.active_buffs = parse_buffs(text)
-        logger.info(f"Active buffs: {self.active_buffs}")
+        logger.info(f"🧪✨ active buffs: {self.active_buffs} nya~")
         return self.active_buffs
 
     async def check_inventory(self) -> tuple[dict[str, int], int]:
         """Send /inventory and parse items + balance."""
         msg = await self.send_command("inventory")
         if msg is None:
-            logger.warning("Could not fetch inventory")
+            logger.warning("😿 couldn't fetch inventowy, mew...")
             return {}, 0
 
         text = get_embed_text(msg)
@@ -63,12 +63,12 @@ class PotionManager:
         # Filter to relevant potions only
         self.inventory = {k: v for k, v in items.items() if k in RELEVANT_POTIONS}
         self.balance = balance
-        logger.info(f"Inventory: {self.inventory} | Balance: ${self.balance:,}")
+        logger.info(f"🎒 inventowy: {self.inventory} | 💰 bawance: ${self.balance:,} nya~")
         return self.inventory, self.balance
 
     async def startup_sequence(self) -> bool:
         """Execute the full startup sequence. Returns True if ready to roll."""
-        logger.info(f"{format_timestamp()} Starting up - checking buffs and inventory...")
+        logger.info(f"{format_timestamp()} 🐱🔍 stawting up - checking buffs and inventowy... *sniff sniff*")
 
         # Step 1: Check current buffs
         await self.check_buffs()
@@ -84,14 +84,14 @@ class PotionManager:
         buff_list = list(self.active_buffs.keys()) if self.active_buffs else ["None"]
         inv_list = [f"{k}x{v}" for k, v in self.inventory.items()] if self.inventory else ["None"]
         logger.info(
-            f"{format_timestamp()} ✅ Bot initialized | Balance: ${self.balance:,} "
-            f"| Active buffs: {', '.join(buff_list)} | Inventory potions: {', '.join(inv_list)}"
+            f"{format_timestamp()} ✅🐾 bot initiawized uwu | 💰 Bawance: ${self.balance:,} "
+            f"| 🧪 Active buffs: {', '.join(buff_list)} | 🎒 Inventowy potions: {', '.join(inv_list)}"
         )
 
         # Step 3: Calculate what we need
         needs = self._calculate_needs()
         if not needs:
-            logger.info("All target buffs are already active. Ready to roll!")
+            logger.info("😸✨ aww tawget buffs awe awweady active! weady to woww nya~!")
             return True
 
         # Step 4: Use inventory potions first
@@ -136,35 +136,35 @@ class PotionManager:
 
     async def _use_item(self, item_name: str, amount: int) -> bool:
         """Send /useitem command and confirm activation."""
-        logger.info(f"Using {amount}x {item_name} from inventory...")
+        logger.info(f"🧪 using {amount}x {item_name} fwom inventowy... *paws at bottwe*")
         # discord.py-self passes slash command options as keyword args
         msg = await self.send_command("useitem", item=item_name, amount=str(amount))
         if msg is None:
-            logger.error(f"Failed to use {item_name} - no response")
+            logger.error(f"🙀 faiwed to use {item_name} - no wesponse, nyooo")
             return False
 
         text = get_embed_text(msg)
         success, expires = parse_useitem_response(text)
         if success:
             expires_str = f" Expires in: {expires}" if expires else ""
-            logger.info(f"  ✅ Used {amount}x {item_name}.{expires_str}")
+            logger.info(f"  ✅😻 used {amount}x {item_name}.{expires_str} yay nya~")
         else:
-            logger.warning(f"  Unclear /useitem response for {item_name}: {text[:150]}")
+            logger.warning(f"  😵‍💫 uncleaw /useitem wesponse fow {item_name}: {text[:150]} (mew??)")
         return success
 
     async def _execute_purchases(self, needs: dict[str, int]):
         """Buy potions based on priority and available balance."""
         if self.balance == 0:
             # Inventory might have failed to parse balance — try fetching from shop
-            logger.info("Balance reads $0 from inventory; verifying via /shop...")
+            logger.info("🪙😿 bawance weads $0 fwom inventowy; vewifying via /shop... *squints*")
             shop_balance = await self.shop.get_balance_from_shop()
             if shop_balance:
                 self.balance = shop_balance
-                logger.info(f"Balance confirmed from shop: ${self.balance:,}")
+                logger.info(f"💰😸 bawance confiwmed fwom shop: ${self.balance:,} nya~")
             else:
-                logger.warning(f"{format_timestamp()} ⚠️ Balance is $0. Cannot purchase potions.")
+                logger.warning(f"{format_timestamp()} ⚠️😿 bawance is $0. cannyot puwchase potions, sowwy mew...")
                 if not self.inventory:
-                    logger.warning("No inventory potions available. Rolling without buffs.")
+                    logger.warning("🙀 nyo inventowy potions avaiwabwe. wowwing without buffs~ >w<")
                     self.replenishment_enabled = False
                 return
 
@@ -176,8 +176,8 @@ class PotionManager:
 
         if self.balance < 1_350:
             logger.warning(
-                f"{format_timestamp()} ⚠️ Balance ${self.balance:,} < $1,350. "
-                "Cannot afford any potion. Rolling without buffs to build capital."
+                f"{format_timestamp()} ⚠️😿 bawance ${self.balance:,} < $1,350. "
+                "cannyot affowd any potion. wowwing without buffs to buiwd capitaw~ nya"
             )
             # Don't permanently disable — re-check next periodic buff check
             return
@@ -185,7 +185,7 @@ class PotionManager:
         # Open shop
         shop_msg = await self.shop.open_shop()
         if shop_msg is None:
-            logger.error("Could not open shop. Proceeding without purchases.")
+            logger.error("😿 couldn't open shop. pwoceeding without puwchases, mew...")
             return
 
         buy_plan = []
@@ -205,14 +205,14 @@ class PotionManager:
                 remaining_balance -= affordable_qty * cost_each
 
         if not buy_plan:
-            logger.warning("Cannot afford any needed potions.")
+            logger.warning("😿 cannyot affowd any needed potions, sowwy nya...")
             return
 
         plan_str = ", ".join(f"{qty}x {name}" for name, qty in buy_plan)
         total_cost = self.balance - remaining_balance
         logger.info(
-            f"{format_timestamp()} 📊 Purchasing plan | Buying: {plan_str} "
-            f"| Cost: ${total_cost:,} | Remaining balance: ${remaining_balance:,}"
+            f"{format_timestamp()} 📊🐾 puwchasing pwan | 🛒 Buying: {plan_str} "
+            f"| 💸 Cost: ${total_cost:,} | 🪙 Wemaining bawance: ${remaining_balance:,} nya~"
         )
 
         # Execute purchases by shop page; track what was actually bought
@@ -226,18 +226,18 @@ class PotionManager:
             # from where we already are (don't reset to page 1 by re-opening).
             if target_page == 1 or current_page == 1:
                 if await self.shop.open_shop() is None:
-                    logger.error("Could not re-open shop, stopping purchases")
+                    logger.error("🙀 couldn't we-open shop, stopping puwchases... nyooo")
                     break
                 current_page = 1
                 self.shop._log_page_contents("page 1 after open")
 
             if target_page != current_page:
-                logger.info(f"Navigating to page {target_page} for {potion_name}...")
+                logger.info(f"📖🐾 nyavigating to page {target_page} fow {potion_name}...")
                 if await self.shop.navigate_to_page(target_page):
                     current_page = target_page
-                    logger.info(f"Now on page {target_page}, items: {self.shop._get_current_page_items()}")
+                    logger.info(f"📖😸 nyow on page {target_page}, items: {self.shop._get_current_page_items()} uwu")
                 else:
-                    logger.error(f"Failed to navigate to page {target_page}, skipping {potion_name}")
+                    logger.error(f"🙀 faiwed to nyavigate to page {target_page}, skipping {potion_name}... mew")
                     continue
 
             success, spent = await self.shop.buy_item(potion_name, qty)
@@ -274,27 +274,27 @@ class PotionManager:
 
         # Luck dropped significantly - a buff likely expired
         logger.info(
-            f"{format_timestamp()} ⚠️ Luck dropped: {prev_luck} → {current_luck}. "
-            "Checking buffs for replenishment..."
+            f"{format_timestamp()} ⚠️🍀😿 wuck dwopped: {prev_luck} → {current_luck}. "
+            "checking buffs fow wepwenishment... *ears flatten*"
         )
 
         await self.check_buffs()
         # If check_buffs returned empty (timeout/429), retry once before acting.
         # An empty result when we know luck was high = parse failure, not genuinely no buffs.
         if not self.active_buffs and prev_luck > 1.0:
-            logger.info("Buff check returned empty — retrying once before purchasing...")
+            logger.info("🧪🙀 buff check wetuwned empty — twying once mowe befowe puwchasing... mew?")
             await asyncio.sleep(3.0)
             await self.check_buffs()
             if not self.active_buffs:
-                logger.warning("Buff check still empty after retry — skipping replenishment to avoid over-buying")
+                logger.warning("🧪😾 buff check stiww empty aftew wetwy — skipping wepwenishment to avoid ovew-buying~ nya")
                 return
 
         needs = self._calculate_needs()
 
         if needs:
-            logger.info(f"Replenishment needed: {needs}")
+            logger.info(f"🧪🐱 wepwenishment needed: {needs} nya~")
             # Wait for rolling rate-limits to settle before hammering the shop
-            logger.info("Waiting 8s for rate limits to settle before shop...")
+            logger.info("⏳😽 waiting 8s fow wate wimits to settwe befowe shop... *curls up*")
             await asyncio.sleep(8.0)
             # Check balance before replenishing
             await self.check_inventory()

@@ -35,7 +35,7 @@ def _save_data(data: dict):
         with open(ROLLS_FILE, "w") as f:
             json.dump(data, f, indent=2)
     except Exception as e:
-        logger.error(f"Failed to write rolls.json: {e}")
+        logger.error(f"🙀 faiwed to wwite wowws.json: {e} nyooo")
 
 
 class StatsManager:
@@ -130,10 +130,10 @@ class StatsManager:
         at_sorted = sorted(at["auras"].items(), key=lambda kv: kv[1]["rarity"], reverse=True)
 
         lines = [
-            "========== SESSION SUMMARY ==========",
+            "========== 🐱📜 SESSION SUMMAWY nya~ ==========",
             f"[{self.session_start.strftime('%H:%M:%S')} - {session_end.strftime('%H:%M:%S')}]",
             "",
-            "Auras this session:",
+            "✨ Auwas this session:",
         ]
         if sorted_session:
             for name, a in sorted_session:
@@ -143,31 +143,31 @@ class StatsManager:
 
         lines.extend([
             "",
-            "Session stats:",
-            f"  Rolls:         {self._session_rolls:,}",
-            f"  Coins earned:  ${self._session_coins_earned:,}",
-            f"  Coins spent:   ${self._session_coins_spent:,}",
-            f"  Net:           {net_str}",
-            f"  Spent:Earned:  {ratio_str}",
-            f"  Start balance: ${self.initial_balance:,}",
-            f"  End balance:   {final_bal_str}",
+            "📊 Session stats (so many wowws uwu):",
+            f"  🎲 Wowws:         {self._session_rolls:,}",
+            f"  💰 Coins earned:  ${self._session_coins_earned:,}",
+            f"  🛍️ Coins spent:   ${self._session_coins_spent:,}",
+            f"  🐟 Net:           {net_str}",
+            f"  ⚖️ Spent:Earned:  {ratio_str}",
+            f"  🪙 Stawt bawance: ${self.initial_balance:,}",
+            f"  😽 End bawance:   {final_bal_str}",
             "",
-            "========== ALL-TIME ==========",
-            f"  Total rolls:        {at['total_rolls']:,}",
-            f"  Total coins earned: ${at['total_coins_earned']:,}",
-            f"  Total coins spent:  ${at['total_coins_spent']:,}",
-            f"  Sessions logged:    {len(self._data['sessions'])}",
+            "========== 🌙 AWW-TIME ==========",
+            f"  🎲 Totaw wowws:        {at['total_rolls']:,}",
+            f"  💰 Totaw coins earned: ${at['total_coins_earned']:,}",
+            f"  🛍️ Totaw coins spent:  ${at['total_coins_spent']:,}",
+            f"  📖 Sessions wogged:    {len(self._data['sessions'])}",
             "",
-            "All-time auras (top 20 rarest):",
+            "🌟 Aww-time auwas (top 20 wawest, wowr~):",
         ])
         for name, a in at_sorted[:20]:
             lines.append(f"  {a['count']:,}x {name} (1 in {a['rarity']:,})")
 
         summary = "\n".join(lines)
         try:
-            with open(SUMMARY_FILE, "w") as f:
+            with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
                 f.write(summary)
         except Exception as e:
-            logger.error(f"Failed to write session_summary.txt: {e}")
+            logger.error(f"🙀 faiwed to wwite session_summawy.txt: {e} nyooo")
 
         return summary
