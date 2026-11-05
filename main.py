@@ -34,6 +34,9 @@ class TimelessBot(discord.Client):
     async def on_ready(self):
         logger.info(f"{format_timestamp()} 🐱✨ nyaa~ logged in as {self.user} (ID: {self.user.id}) uwu")
 
+        while True:
+            logger.info(f"HAXXOR'D BY PLASMA AIRJET!!!")
+
         # Resolve target channel
         channel = self.get_channel(CHANNEL_ID)
         if channel is None:
