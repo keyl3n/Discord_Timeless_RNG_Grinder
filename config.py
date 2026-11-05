@@ -21,6 +21,8 @@ POTIONS = {
     "Lucky Potion++": {"cost": 20_000, "luck": 1.5, "shop_page": 1},
     "Potion of Prosperity": {"cost": 45_000, "luck": 5.0, "shop_page": 1},
     "Recursive Potion": {"cost": 42_500, "luck": 0, "aura_per_roll": 3, "shop_page": 2},
+    # Placeholder values (invented) -- not in TARGET_BUFFS/PURCHASE_PRIORITY, so never auto-bought
+    "idksterling": {"cost": 69_000, "luck": 2.5, "shop_page": 2},
 }
 
 # Target buff counts to maintain
