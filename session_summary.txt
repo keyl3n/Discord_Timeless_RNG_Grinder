@@ -2,59 +2,22 @@
 [21:56:55 - 22:06:58]
 
 Auras this session:
-  1x Stormal (1 in 90,000)
-  1x Starlight (1 in 50,000)
-  2x Copper (1 in 29,000)
-  1x Powered (1 in 16,384)
-  1x Ink : LEAK (1 in 14,000)
-  2x Atomic : Ribonucleic (1 in 9,876)
-  3x Hazard (1 in 7,000)
-  1x Flushed (1 in 6,900)
-  1x Flutter (1 in 5,000)
-  1x Bleeding (1 in 4,444)
-  1x Fem (1 in 4,300)
-  2x Glacier (1 in 2,304)
-  3x Ash (1 in 2,300)
-  1x Magnetic (1 in 2,048)
-  2x Glock (1 in 1,700)
-  2x Atomic (1 in 1,180)
-  4x Hydrogen (1 in 1,111)
-  4x Precious (1 in 1,024)
-  5x Diaboli (1 in 1,004)
-  7x Aquamarine (1 in 900)
-  4x Wind (1 in 900)
-  6x Sapphire (1 in 800)
-  4x Jackpot (1 in 777)
-  5x Ink (1 in 700)
-  13x Gilded (1 in 512)
-  13x Emerald (1 in 500)
-  13x Forbidden (1 in 403)
-  9x Ruby (1 in 350)
-  28x Topaz (1 in 150)
-  35x Rage (1 in 128)
-  45x Tuff (1 in 67)
-  61x Crystallized (1 in 64)
-  84x Divinus (1 in 32)
-  154x Rare (1 in 16)
-  176x Natural (1 in 8)
-  160x Good (1 in 5)
-  98x Uncommon (1 in 4)
-  44x Common (1 in 2)
+  1x Oppression (1 in 220,000,000)
 
 Session stats:
-  Rolls:         153
-  Coins earned:  $226,538
-  Coins spent:   $0
-  Net:           +$226,538
-  Spent:Earned:  0.00:1
-  Start balance: $5,057,274
-  End balance:   $5,283,812
+  Rolls:         999999999
+  Coins earned:  999999999
+  Coins spent:   999999999
+  Net:           999999999
+  Spent:Earned:  999999999
+  Start balance: 999999999
+  End balance:   999999999
 
 ========== ALL-TIME ==========
-  Total rolls:        926
-  Total coins earned: $2,456,688
-  Total coins spent:  $0
-  Sessions logged:    3
+  Total rolls:        999999999
+  Total coins earned: 999999999
+  Total coins spent:  999999999
+  Sessions logged:    999999999
 
 All-time auras (top 20 rarest):
   1x Nihility (1 in 9,000,000)
